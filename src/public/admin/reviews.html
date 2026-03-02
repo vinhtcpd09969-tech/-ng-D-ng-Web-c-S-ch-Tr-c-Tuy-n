@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đánh giá - PolyBook Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="../assets/css/admin-reviews.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebar-container" class="col-md-3 col-lg-2 d-md-block sidebar collapse"></nav>
+        
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+            <h2 class="text-primary fw-bold mb-4">
+                <i class="fas fa-star-half-alt me-2"></i> Quản lý Đánh giá
+            </h2>
+            
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white py-3 border-0">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-4">
+                            <h5 class="fw-bold m-0 text-dark">
+                                <i class="fas fa-list me-2"></i>Danh sách đánh giá
+                            </h5>
+                        </div>
+                        
+                        <div class="col-md-8">
+                            <div class="d-flex gap-2 justify-content-md-end">
+                                <div class="input-group shadow-sm" style="max-width: 350px;">
+                                    <span class="input-group-text bg-white border-end-0">
+                                        <i class="fas fa-search text-muted"></i>
+                                    </span>
+                                    <input type="text" id="search-input" class="form-control border-start-0" 
+                                           placeholder="Tìm tên sách, người dùng..." 
+                                           oninput="filterReviews()">
+                                </div>
+
+                                <select id="star-filter" class="form-select w-auto shadow-sm" onchange="filterReviews()">
+                                    <option value="all">Tất cả số sao</option>
+                                    <option value="5">5 ⭐ (Xuất sắc)</option>
+                                    <option value="4">4 ⭐ (Tốt)</option>
+                                    <option value="3">3 ⭐ (Bình thường)</option>
+                                    <option value="2">2 ⭐ (Kém)</option>
+                                    <option value="1">1 ⭐ (Rất tệ)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th style="width: 80px;">ID</th>
+                                    <th style="width: 200px;">Tên Sách</th>
+                                    <th style="width: 150px;">Người Dùng</th>
+                                    <th style="width: 120px;">Số Sao</th>
+                                    <th>Nội Dung Đánh Giá</th>
+                                    <th class="text-center" style="width: 200px;">Hành Động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="review-list">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/common.js"></script>
+<script src="../assets/js/admin-layout.js"></script>
+<script src="../assets/js/admin-reviews.js"></script> 
+</body>
+</html>
