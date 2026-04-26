@@ -1,4 +1,5 @@
 📚 Ứng Dụng Web Đọc Sách Trực Tuyến
+
 Dự án là một ứng dụng web đọc sách và truyện được phát triển trên nền tảng Node.js. Hệ thống được xây dựng theo mô hình kiến trúc MVC, cung cấp đầy đủ giao diện đọc sách cho người dùng cuối và trang quản lý dữ liệu dành riêng cho ban quản trị.
 
 ✨ Tính năng chính
